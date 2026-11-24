@@ -10,8 +10,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Login from './pages/login';
+import Signup from './pages/signup';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
