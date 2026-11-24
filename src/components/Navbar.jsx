@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Sparkles, Menu, X, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Sparkles, Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Navbar() {
 
   const isActive = (path) => {
     if (path === '/') return location.pathname === '/';
+    if (path.includes('#')) return false;
     return location.pathname === path;
   };
 
@@ -23,8 +25,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          
-          {/* Logo & Tag */}
+
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-200">
               <Sparkles className="w-5 h-5 text-violet-400" />
@@ -44,7 +45,6 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => (
               <Link
@@ -61,25 +61,31 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Action Button */}
           <div className="hidden sm:flex items-center gap-3">
             <Link
+              to="/login"
+              className="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-violet-600"
+            >
+              Log In
+            </Link>
+
+            <Link
+              to="/signup"
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-violet-600 hover:bg-violet-700 shadow-sm transition-all"
+            >
+              Sign Up
+            </Link>
+
+            <Link
               to="/decode"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-sm hover:shadow transition-all group"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 shadow-sm transition-all group"
             >
               <span>Start Decoding</span>
               <ArrowRight className="w-4 h-4 text-violet-400 group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center gap-2 sm:hidden">
-            <Link
-              to="/decode"
-              className="px-3 py-1.5 text-xs font-semibold text-white bg-slate-900 rounded-lg"
-            >
-              Decode
-            </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -92,9 +98,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="sm:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg animate-fadeIn">
+        <div className="sm:hidden border-b border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2 shadow-lg">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -109,13 +114,30 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <div className="pt-3 border-t border-slate-100">
+
+          <div className="pt-3 border-t border-slate-100 space-y-2">
+            <Link
+              to="/login"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-center rounded-lg text-slate-700 font-semibold"
+            >
+              Log In
+            </Link>
+
+            <Link
+              to="/signup"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-4 py-3 text-center rounded-xl text-sm font-semibold text-white bg-violet-600"
+            >
+              Sign Up
+            </Link>
+
             <Link
               to="/decode"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-slate-900"
             >
-              <span>Start Decoding</span>
+              Start Decoding
               <ArrowRight className="w-4 h-4 text-violet-400" />
             </Link>
           </div>
