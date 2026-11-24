@@ -1,5 +1,7 @@
+
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,8 +10,9 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
-// Scroll to top helper on route change
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -41,6 +44,8 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
