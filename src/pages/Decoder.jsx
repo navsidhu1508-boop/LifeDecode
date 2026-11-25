@@ -383,7 +383,7 @@ export default function Decoder() {
                 <Languages className="w-4 h-4 text-violet-600" />
                 <span>Explanation Language</span>
               </label>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 {SUPPORTED_LANGUAGES.map((lang) => (
                   <button
                     key={lang.id}

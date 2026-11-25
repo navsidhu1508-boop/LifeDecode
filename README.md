@@ -15,7 +15,6 @@ LifeDecode is a modern, responsive, AI-powered web application that turns compli
 - **Multilingual Support**:
   - English
   - Hindi (हिन्दी)
-  - Punjabi (ਪੰਜਾਬੀ)
 - **Explanation Depth Styles**:
   - **Very Simple**: Friendly conversational analogies, zero jargon.
   - **Detailed**: Thorough clause-by-clause breakdown preserving every number, rate, and date.
@@ -144,6 +143,22 @@ In the Vercel project configuration screen:
    - Send it to friends, family, or colleagues anywhere in the world.
 3. **Internal Routing Support**: Direct links to internal routes (e.g. `https://your-url.vercel.app/decode`, `https://your-url.vercel.app/about`, `https://your-url.vercel.app/privacy`) will work seamlessly when refreshed, thanks to the pre-configured `vercel.json` rewrites.
 4. **Custom Domain (Optional)**: If you purchase a domain name like `lifedecode.com`, you can attach it under Vercel **Settings → Domains** for free with automatic SSL certificates.
+
+---
+
+## 🚂 Deploying to Railway
+
+LifeDecode is pre-configured for seamless Railway deployment:
+
+1. Push your repository to **GitHub**.
+2. Log in to **[Railway.app](https://railway.app)**.
+3. Click **New Project** → **Deploy from GitHub repo** and select `lifedecode`.
+4. Under **Variables**, add:
+   - `GEMINI_API_KEY`: Your Gemini API key from Google AI Studio.
+5. Railway will automatically detect the `package.json` scripts:
+   - **Build Command**: `npm run build`
+   - **Start Command**: `npm run start` (`node server.js`)
+6. In Railway **Settings** → **Networking**, click **Generate Domain** to get your public HTTPS URL.
 
 ---
 

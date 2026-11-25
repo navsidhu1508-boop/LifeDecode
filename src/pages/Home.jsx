@@ -33,7 +33,7 @@ export default function Home() {
     },
     {
       q: 'What languages does LifeDecode support?',
-      a: 'LifeDecode currently supports English, Hindi (हिन्दी), and Punjabi (ਪੰਜਾਬੀ). All explanations, jargon definitions, and next steps are generated natively in your chosen language.'
+      a: 'LifeDecode currently supports English and Hindi (हिन्दी). All explanations, jargon definitions, and next steps are generated natively in your chosen language.'
     },
     {
       q: 'Does LifeDecode store my documents or share them with others?',
@@ -101,7 +101,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <Languages className="w-4 h-4 text-violet-600" />
-              <span>English, Hindi & Punjabi</span>
+              <span>English & Hindi</span>
             </div>
             <div className="flex items-center gap-2">
               <FileText className="w-4 h-4 text-sky-600" />
@@ -171,7 +171,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="pt-2 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100">
-                  <span>Available in: English, Hindi, Punjabi</span>
+                  <span>Available in: English & Hindi</span>
                   <Link to="/decode" className="text-violet-600 font-bold hover:underline inline-flex items-center gap-1">
                     Try with your own doc <ArrowRight className="w-3 h-3" />
                   </Link>
@@ -232,10 +232,10 @@ export default function Home() {
               <Languages className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold text-slate-900">
-              English, Hindi & Punjabi
+              English & Hindi
             </h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Break language barriers. Receive your decoded breakdown in authentic Devanagari Hindi or Gurmukhi Punjabi, not machine translations.
+              Break language barriers. Receive your decoded breakdown in clear everyday English or authentic Devanagari Hindi, not machine translations.
             </p>
           </div>
 
@@ -321,7 +321,7 @@ export default function Home() {
                 Select Language & Style
               </h3>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Choose between English, Hindi, or Punjabi, and select your preferred explanation depth: Very Simple, Detailed, or Step-by-Step.
+                Choose between English or Hindi, and select your preferred explanation depth: Very Simple, Detailed, or Step-by-Step.
               </p>
             </div>
 

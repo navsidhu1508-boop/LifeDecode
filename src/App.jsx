@@ -18,10 +18,14 @@ function ScrollToTop() {
 
   useEffect(() => {
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return;
+      try {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      } catch {
+        // Ignore invalid selector hashes and fall back to scrolling to top.
       }
     }
     window.scrollTo(0, 0);
@@ -54,3 +58,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+

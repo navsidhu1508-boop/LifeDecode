@@ -12,7 +12,7 @@ function createApiMiddleware() {
     const pathname = parsedUrl.pathname;
 
     if (pathname && pathname.startsWith('/api/')) {
-      const routeName = pathname.replace('/api/', '').split('?')[0];
+      const routeName = pathname.replace('/api/', '').split('?')[0].replace(/\/+$/, '');
 
       try {
         let handlerModule;

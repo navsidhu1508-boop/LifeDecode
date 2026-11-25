@@ -50,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/decode" className="hover:text-violet-600 transition-colors">
-                  Multi-language (EN / HI / PB)
+                  Multi-language (EN / HI)
                 </Link>
               </li>
             </ul>

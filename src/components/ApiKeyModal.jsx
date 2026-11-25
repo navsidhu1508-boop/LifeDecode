@@ -49,7 +49,7 @@ export default function ApiKeyModal({ isOpen, onClose }) {
             </div>
             <div className="flex items-start gap-2">
               <span className="w-4 h-4 rounded-full bg-slate-900 text-white flex items-center justify-center text-[10px] flex-shrink-0 mt-0.5">3</span>
-              <span><strong>For Vercel Deployment:</strong> Add <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800">GEMINI_API_KEY</code> in your Vercel Project Settings → Environment Variables.</span>
+              <span><strong>For Production Deployment:</strong> Add <code className="bg-slate-200 px-1 py-0.5 rounded text-slate-800">GEMINI_API_KEY</code> in your hosting platform&apos;s Environment Variables (e.g., Railway Variables or Vercel Settings).</span>
             </div>
           </div>
 

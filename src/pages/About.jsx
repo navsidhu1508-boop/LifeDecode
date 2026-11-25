@@ -107,7 +107,7 @@ export default function About() {
               <span>Multilingual Inclusion</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              True accessibility means understanding in your own language. We proudly support English, Hindi, and Punjabi with more languages on our roadmap.
+              True accessibility means understanding in your own language. We proudly support English and Hindi with more languages on our roadmap.
             </p>
           </div>
 

@@ -1,7 +1,6 @@
 export const SUPPORTED_LANGUAGES = [
   { id: 'English', label: 'English', native: 'English', flag: '🇺🇸' },
   { id: 'Hindi', label: 'Hindi', native: 'हिन्दी', flag: '🇮🇳' },
-  { id: 'Punjabi', label: 'Punjabi', native: 'ਪੰਜਾਬੀ', flag: '🇮🇳' },
 ];
 
 export const EXPLANATION_STYLES = [
