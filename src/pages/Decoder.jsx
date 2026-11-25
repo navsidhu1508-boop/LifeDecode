@@ -152,9 +152,9 @@ export default function Decoder() {
       setResult(res.data);
     } catch (err) {
       console.error('Decode failed:', err);
-      if (err.code === 'GEMINI_API_KEY_MISSING' || (err.message && err.message.includes('API key'))) {
+      if (err.code === 'GEMINI_API_KEY_MISSING' || err.code === 'GEMINI_API_KEY_INVALID') {
         setShowApiKeyModal(true);
-        setError('Gemini API key is not configured on the server. Click to learn how to add your free key.');
+        setError(err.message || 'Gemini API key is not configured on the server. Click to learn how to add your free key.');
       } else {
         setError(err.message || 'An error occurred while decoding your document. Please verify your input and try again.');
       }
